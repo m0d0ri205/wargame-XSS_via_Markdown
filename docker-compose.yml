@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  flask:
+    build:
+      context: .
+    container_name: flask-container
+    restart: always
+    ports:
+      - "13671:5000"
+    environment:
+      - TZ=Asia/Seoul
+    volumes:
+      - ./main:/usr/src/app
