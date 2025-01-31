@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오징어 게임 초대장</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Noto Sans KR', sans-serif;
+            padding: 20px;
+        }
+        
+        .card {
+            background-color: #000;
+            border: 2px solid #ff0087;
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1.618/1;
+            padding: 30px;
+            color: white;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .shapes {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .shape {
+            width: 20px;
+            height: 20px;
+            background-color: #ff0087;
+        }
+        
+        .circle {
+            border-radius: 50%;
+        }
+        
+        .triangle {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+        
+        .square {
+            /* square is default */
+        }
+        
+        .content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .header {
+            margin-bottom: 30px;
+        }
+        
+        .number {
+            font-size: 3rem;
+            color: #ff0087;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .divider {
+            width: 30px;
+            height: 2px;
+            background-color: #ff0087;
+            margin: 20px 0;
+        }
+        
+        .title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .subtitle {
+            color: #ff0087;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .info {
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.6;
+        }
+        
+        .footer {
+            text-align: right;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 20px;
+            }
+            
+            .number {
+                font-size: 2.5rem;
+            }
+            
+            .title {
+                font-size: 1.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="shapes">
+            <div class="shape circle"></div>
+            <div class="shape triangle"></div>
+            <div class="shape square"></div>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div class="number">456</div>
+                <div class="divider"></div>
+                <h1 class="title">오징어 게임</h1>
+                <p class="subtitle">생존 게임에 초대합니다</p>
+                <p class="info">
+                    당신은 선택받았습니다.<br>
+                    456억 원의 상금이 걸린 게임에 참여하시겠습니까?<br>
+                    참여를 원하시면 카드를 클릭하세요.
+                </p>
+            </div>
+            <div class="footer">
+                © SQUID GAME
+            </div>
+        </div>
+    </div>
+</body>
+</html>
