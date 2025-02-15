@@ -10,9 +10,9 @@ with open("flag.txt", "r") as f:
 # 취약한 마크다운 렌더링 함수
 def markdown_to_html(content):
     # 이미지 태그 변환
-    content = re.sub(r'!\[([^\]]+)\]\(([^\)]+)\)', r'<img alt="\1" src="\2">', content)
+    content = re.sub(r'!\[([^\]]+)\]\((.+)\)', r'<img alt="\1" src="\2">', content)
     # 링크 태그 변환
-    content = re.sub(r'\[([^\]]+)\]\(([^\)]+)\)', r'<a href="\2">\1</a>', content)
+    content = re.sub(r'\[([^\]]+)\]\((.+)\)', r'<a href="\2">\1</a>', content)
     # 줄바꿈 변환
     content = content.replace('\n', '<br>')
     return content
@@ -30,9 +30,6 @@ def index():
 
 @app.route("/flag", methods=["GET"])
 def flag():
-    # Referer 헤더 확인 (보안 설정)
-    if "Referer" not in request.headers or "localhost:5000" not in request.headers["Referer"]:
-        return "Access Denied", 403
     return FLAG
 
 
