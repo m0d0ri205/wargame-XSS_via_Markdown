@@ -1,1 +1,1 @@
-flag{flag_flag}
+YSIF{flag_xss_markdown_xss}

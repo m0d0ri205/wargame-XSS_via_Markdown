@@ -2,7 +2,7 @@
 FROM python:slim
 
 # 환경 변수 설정
-ENV port 8000
+ENV port 5000
 #한국 시간
 ENV TZ Asia/Seoul
 
@@ -20,9 +20,6 @@ RUN apt-get update
 RUN apt-get install -y git
 RUN groupadd -g 999 appuser
 RUN useradd -r -u 999 -g appuser appuser
-
-#RUN chown -R appuser:appuser /usr/src/app/logs
-#RUN chmod 644 /usr/src/app/logs
 
 USER appuser
 
